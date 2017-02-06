@@ -15,7 +15,7 @@ import com.ibm.watson.developer_cloud.language_translator.v2.model.TranslationRe
 /**
  * Servlet implementation class SimpleServlet
  */
-@WebServlet(“/SimpleServlet”)
+@WebServlet("/SimpleServlet")
 public class SimpleServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -24,13 +24,13 @@ public class SimpleServlet extends HttpServlet {
  */
      @Override
 	 protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		 response.setContentType(“text/html”);
-	     response.getWriter().print(translateToSpanish(“This is a test”));
+		 response.setContentType("text/html");
+	     response.getWriter().print(translateToSpanish("This is a test"));
 	 }
 
 	 private String translateToSpanish(String text){
 		LanguageTranslator service = new LanguageTranslator();
-		service.setUsernameAndPassword(“87a31e67-e51f-4d72-b00c-a490d92f441f”, “sh2jisW181Od”);
+		service.setUsernameAndPassword("87a31e67-e51f-4d72-b00c-a490d92f441f", "sh2jisW181Od");
 		TranslationResult translationResult = service.translate(text, Language.ENGLISH, Language.SPANISH).execute();
 		return translationResult.getFirstTranslation();
 	 }
