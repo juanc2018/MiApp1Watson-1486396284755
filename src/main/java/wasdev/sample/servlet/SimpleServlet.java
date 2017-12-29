@@ -21,6 +21,12 @@ public class SimpleServlet extends HttpServlet {
 
 /**
  * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+ * este json de abajo se obtiene del servicio al que esta conectado esta aplicacion en bluemix
+ {
+  "url": "https://gateway.watsonplatform.net/language-translator/api",
+  "username": "8c1026f8-f3b0-4bba-9e5f-6fc7a3c22f91",
+  "password": "sVP00531nzbJ"
+ }
  */
      @Override
 	 protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -30,7 +36,7 @@ public class SimpleServlet extends HttpServlet {
 
 	 private String translateToSpanish(String text){
 		LanguageTranslator service = new LanguageTranslator();
-		service.setUsernameAndPassword("87a31e67-e51f-4d72-b00c-a490d92f441f", "sh2jisW181Od");
+		service.setUsernameAndPassword("8c1026f8-f3b0-4bba-9e5f-6fc7a3c22f91", "sVP00531nzbJ");
 		TranslationResult translationResult = service.translate(text, Language.ENGLISH, Language.SPANISH).execute();
 		return translationResult.getFirstTranslation();
 	 }
