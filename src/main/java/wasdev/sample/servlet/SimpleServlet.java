@@ -39,7 +39,15 @@ public class SimpleServlet extends HttpServlet {
 		LanguageTranslator service = new LanguageTranslator();
 		service.setEndPoint("https://gateway.watsonplatform.net/language-translator/api");
 		service.setUsernameAndPassword("fe93bdd8-b01a-4487-8b91-be594faa82be", "oa8IO4cVuROM");
-		TranslationResult translationResult = service.translate(text, Language.ENGLISH, Language.SPANISH).execute();
+		TranslateOptions translateOptions = new TranslateOptions.Builder()
+		  .text(text)
+		  .source(Language.ENGLISH)
+		  .target(Language.SPANISH)
+		  .build();
+
+		TranslationResult result = service.translate(translateOptions)
+		  .execute();
+		//TranslationResult translationResult = service.translate(text, Language.ENGLISH, Language.SPANISH).execute();
 		return translationResult.getFirstTranslation();
 	 }
 }
