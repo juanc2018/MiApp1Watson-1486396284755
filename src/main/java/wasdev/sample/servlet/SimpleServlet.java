@@ -13,6 +13,7 @@ import com.ibm.watson.developer_cloud.language_translator.v2.model.Language;
 import com.ibm.watson.developer_cloud.language_translator.v2.model.TranslationResult;
 import com.ibm.watson.developer_cloud.language_translator.v2.model.TranslateOptions;
 
+
 /**
  * Servlet implementation class SimpleServlet
  */
