@@ -36,6 +36,7 @@ public class SimpleServlet extends HttpServlet {
 
 	 private String translateToSpanish(String text){
 		LanguageTranslator service = new LanguageTranslator();
+		service.setEndPoint("https://gateway.watsonplatform.net/language-translator/api");
 		service.setUsernameAndPassword("8c1026f8-f3b0-4bba-9e5f-6fc7a3c22f91", "sVP00531nzbJ");
 		TranslationResult translationResult = service.translate(text, Language.ENGLISH, Language.SPANISH).execute();
 		return translationResult.getFirstTranslation();
