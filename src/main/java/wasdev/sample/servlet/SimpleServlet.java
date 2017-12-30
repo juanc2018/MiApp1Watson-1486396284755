@@ -31,8 +31,8 @@ public class SimpleServlet extends HttpServlet {
      @Override
 	 protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		 response.setContentType("text/html");
-	     //response.getWriter().print(translateToSpanish("This would be a much more complex message to translate"));
-	     response.getWriter().print("This would be a much more complex message to translate");
+	     response.getWriter().print(translateToSpanish("This would be a much more complex message to translate"));
+	     //response.getWriter().print("This would be a much more complex message to translate");
 	 }
 
 	 private String translateToSpanish(String text){
